@@ -1,11 +1,7 @@
-// Requiring axios module for making HTTP requests
 const axios = require('axios').default;
 
-// Function to connect to a URL and handle the response
 const connectToURL = (url) => {
-    // Sending a GET request to the specified URL using axios
     const req = axios.get(url);
-    // Logging the initial promise object
     console.log(req);
     // Handling the promise resolution
     req.then(resp => {
