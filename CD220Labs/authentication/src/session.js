@@ -31,7 +31,7 @@ app.get('/dashboard', (req, res) => {
   if (req.session.user) {
     res.send(`Welcome ${req.session.user}`);
   } else {
-    res.send('Please log in first');
+    res.status(401).send('Please log in first');
   }
 });
 
