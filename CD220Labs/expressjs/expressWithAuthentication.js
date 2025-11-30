@@ -1,4 +1,3 @@
- // Importing required modules: Express.js, JSON Web Token (JWT), and Express session
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const session = require('express-session');
@@ -29,9 +28,9 @@ app.use(session({ secret: "fingerpint" })); // Middleware to handle sessions
 
 // Middleware to authenticate users using JWT
 app.use("/auth", function auth(req, res, next) {
-  if (req.session.authorization) { // Get the authorization object stored in the session
-    token = req.session.authorization['accessToken']; // Retrieve the token from authorization object
-    jwt.verify(token, "access", (err, user) => { // Use JWT to verify token
+  if (req.session.authorization) {
+    token = req.session.authorization['accessToken'];
+    jwt.verify(token, "access", (err, user) => {
       if (!err) {
         req.user = user;
         next();
@@ -84,10 +83,10 @@ app.post("/register", (req, res) => {
 });
 
 // Main endpoint to be accessed by authenticated users
-app.get("/auth/get_message", (req, res) => {
+app.get("/auth/get-message", (req, res) => {
   return res.status(200).json({ message: "Hello, You are an authenticated user. Congratulations!" });
 });
 
-const PORT = 5000; // Define the port number
+const PORT = 5000;
 
-app.listen(PORT, () => console.log("Server is running")); // Start the server and listen on the specified port
+app.listen(PORT, () => console.log("Server is running at http://localhost:" + PORT));
