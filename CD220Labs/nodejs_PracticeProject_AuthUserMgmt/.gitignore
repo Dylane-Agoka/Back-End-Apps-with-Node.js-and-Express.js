@@ -1,7 +1,3 @@
-CD220Labs/mxpfu-nodejsLabs/node_modules
-CD220Labs/expressjs/node_modules
-CD220Labs/nodejs_PracticeProject_AuthUserMgmt/node_modules
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
